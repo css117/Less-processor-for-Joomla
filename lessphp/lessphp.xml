@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="1.7.0">
+    <name>Less Processor for Joomla</name>
+    <libraryname>lessphp</libraryname>
+    <author>Giboo</author>
+    <creationDate>January 2012</creationDate>
+    <copyright>Copyright Giboo (C) 2012</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>joomla@giboo.fr</authorEmail>
+    <authorUrl>www.giboo.fr</authorUrl>
+    <version>1.0</version>
+    <description>
+<![CDATA[
+    <h1>LESS processor for Joomla</h1>
+    This librairy enables <b>Less</b> files to be automatically processed in your Joomla templates, components, or elsewhere...<br />
+    Further informations about this great <b>Less</b> can be found here : <a href="http://leafo.net/lessphp/">leafo.net/lessphp</a><br />
+    <h2>To make this work properly:</h2>
+    <ol style="font-size:1.5em;">
+    	<li style="margin:20px;">First you need to turn on Joomla's SEO URL rewriting (via .htaccess)</li>
+    	<li style="margin:20px;">Second, add these custom rules in you <b>.htaccess</b> after <em>## Begin - Custom redirects</em><br />
+    <blockquote style="background-color:orange;padding:2em;margin:2em;color:#fff;font-size:1.5em;"> 
+    	RewriteCond %{REQUEST_FILENAME} -f<br />
+		RewriteRule ^(.*)(\.less\.css|\.less)$ libraries/lessphp/cache.php?f=$1$2 [L,QSA]
+		</blockquote> 
+    	</li>
+    	<li style="margin:20px;">Now you can use .less or .less.css extension for your <b>Less</b> files : your site will process and cache them !</li>
+   </ol>
+]]>
+    </description>    
+    <files>
+		<filename>cache.php</filename>
+		<filename>index.html</filename>
+		<filename>install.lessphp.php</filename>
+		<filename>lessc.inc.php</filename>
+		<filename>lessphp.xml</filename>
+		<filename>readme.html</filename>
+		<folder>cache</folder>
+	</files>
+    <scriptfile>install.lessphp.php</scriptfile>
+</extension>
